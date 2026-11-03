@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#260d18">
+<title>For Tanmay — A Birthday Surprise</title>
+<style>
+:root{--wine:#260d18;--wine2:#401526;--gold:#d8b46a;--cream:#f5ead7;--muted:#c8b7ad;--rose:#a85d70}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -15%,#6a293e 0%,#260d18 46%,#160810 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+button,input{font:inherit}
+a{color:inherit}
+.wrap{width:min(1050px,91%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;color:var(--muted);font:11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+nav .brand{color:var(--gold)}
+nav a{text-decoration:none;margin-left:16px}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;position:relative;padding:70px 0 90px;overflow:hidden}
+.eyebrow{color:var(--gold);letter-spacing:5px;text-transform:uppercase;font:11px Arial,sans-serif}
+.hero h1{font-size:clamp(58px,11vw,120px);line-height:.95;margin:22px 0 18px;font-weight:400;letter-spacing:-4px}
+.hero h1 span{display:block;color:var(--gold);font-style:italic;font-size:.62em;letter-spacing:0}
+.hero p{max-width:540px;color:var(--muted);margin:20px auto 30px;font-size:18px}
+.btn{border:1px solid var(--gold);background:transparent;color:var(--gold);padding:13px 23px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;font:11px Arial,sans-serif;transition:.25s}
+.btn:hover{background:var(--gold);color:var(--wine)}
+.goldline{width:65px;height:1px;background:var(--gold);margin:28px auto}
+section{padding:76px 0;border-top:1px solid #d8b46a26}
+.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font:10px Arial,sans-serif}
+h2{font-size:clamp(34px,6vw,54px);font-weight:400;line-height:1.1;margin:12px 0 24px}
+.intro{color:var(--muted);max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
+.photo{min-height:210px;border:1px solid #d8b46a55;background:linear-gradient(145deg,#512237,#21101a);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+.photo img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+.photo span{padding:20px;color:#e4c98f;z-index:1;font:11px Arial,sans-serif;letter-spacing:2px}
+.photo input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2}
+.caption{color:var(--muted);font-size:13px;margin-top:8px}
+.letter{background:linear-gradient(135deg,#f0e1c5,#d9c39e);color:#38202a;padding:clamp(25px,6vw,58px);max-width:760px;margin:30px auto 0;box-shadow:0 18px 60px #0005;position:relative}
+.letter:before{content:"";position:absolute;inset:10px;border:1px solid #9b744b66;pointer-events:none}
+.letter p{position:relative;font-size:17px}
+.letter .sign{font-style:italic;color:#7d3548;font-size:24px}
+.memories{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:30px}
+.memory{padding:25px;border:1px solid #d8b46a55;background:#ffffff08}
+.memory b{color:var(--gold);font-size:19px;font-weight:400}
+.memory p{color:var(--muted);margin-bottom:0}
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.reason{padding:16px 18px;background:#ffffff08;border-left:2px solid var(--gold);color:#eadcc8}
+.surprise{text-align:center;padding:38px 20px;border:1px solid #d8b46a66;background:linear-gradient(140deg,#4a1d30aa,#1b0c15aa);margin-top:28px}
+.hidden-note{display:none;margin:24px auto 0;max-width:560px;padding:24px;background:#f0e1c5;color:#38202a;font-size:19px}
+.hidden-note.show{display:block;animation:rise .6s ease}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.musicbox{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:25px;padding:20px;border:1px solid #d8b46a55;background:#ffffff08}
+.musicbox input{max-width:100%;color:var(--muted);font:12px Arial,sans-serif}
+.musicbox audio{width:100%;margin-top:8px}
+footer{text-align:center;padding:55px 0;color:var(--muted);font-size:13px}
+footer strong{display:block;color:var(--gold);font-size:25px;font-weight:400;margin:8px}
+.stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#e8c879 1px,transparent 1px),radial-gradient(#fff2d4 1px,transparent 1px);background-size:83px 83px,137px 137px;background-position:0 0,30px 50px;opacity:.18}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#f0e1c5;color:#38202a;padding:10px 18px;display:none;z-index:10;font:13px Arial,sans-serif}
+@media(max-width:650px){nav{align-items:flex-start;gap:10px}nav .links{display:none}.grid{grid-template-columns:repeat(2,1fr)}.memories,.reasons{grid-template-columns:1fr}.hero{min-height:72vh}.photo{min-height:160px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="brand">A little something for Tanmay</div><div class="links"><a href="#memories">Memories</a><a href="#letter">The letter</a><a href="#surprise">Surprise</a></div></nav>
+</div>
+<header class="hero">
+<div class="stars"></div>
+<div class="wrap">
+<div class="eyebrow">A day worth celebrating · 04</div>
+<h1>Happy Birthday<span>Tanmay.</span></h1>
+<div class="goldline"></div>
+<p>Some people make ordinary days unforgettable. This little corner of the internet is for one of them.</p>
+<button class="btn" onclick="document.querySelector('#memories').scrollIntoView({behavior:'smooth'})">Enter your birthday page ↓</button>
+</div>
+</header>
+<main class="wrap">
+<section id="memories">
+<div class="kicker">01 / The little time capsule</div>
+<h2>Our kind of memories.</h2>
+<p class="intro">A few snapshots from the collection. Add your favourite photos below — tap any frame to choose an image from your device.</p>
+<div class="grid">
+<div><label class="photo"><span>ADD A PHOTO · 01<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">The unforgettable one</div></div>
+<div><label class="photo"><span>ADD A PHOTO · 02<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">The random day</div></div>
+<div><label class="photo"><span>ADD A PHOTO · 03<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">The best kind of chaos</div></div>
+<div><label class="photo"><span>ADD A PHOTO · 04<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">A moment worth keeping</div></div>
+<div><label class="photo"><span>ADD A PHOTO · 05<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">Proof we have stories</div></div>
+<div><label class="photo"><span>ADD A PHOTO · 06<input type="file" accept="image/*" onchange="addPhoto(this)"></span></label><div class="caption">One for the archives</div></div>
+</div>
+</section>
+<section>
+<div class="kicker">02 / The friendship files</div>
+<h2>Things that feel like us.</h2>
+<p class="intro">The best friendships are built from a thousand tiny moments. Replace these prompts with your own stories and inside jokes.</p>
+<div class="memories">
+<div class="memory"><b>The moment I still laugh about</b><p>[Add that one ridiculous story you both keep bringing up.]</p></div>
+<div class="memory"><b>An ordinary day, made better</b><p>[Add a small memory that means more than it seems.]</p></div>
+<div class="memory"><b>Our most iconic conversation</b><p>[Add a quote, running joke, or unforgettable chat.]</p></div>
+<div class="memory"><b>More chapters to come</b><p>There are still so many places to go, things to try, and memories to make.</p></div>
+</div>
+</section>
+<section id="letter">
+<div class="kicker">03 / A note from me to you</div>
+<h2>Read this when you have a minute.</h2>
+<div class="letter">
+<p>Dear Tanmay,</p>
+<p>Happy birthday! I hope this year brings you the kind of happiness that stays, the kind of opportunities that excite you, and the kind of people who make life feel lighter.</p>
+<p>I'm genuinely grateful to have you in my life. Thank you for the laughs, the conversations, the random moments, and for being someone I can make memories with. Even the simplest days become stories worth remembering when you're part of them.</p>
+<p>I hope you never forget how much you matter to the people around you. Keep being unapologetically yourself, keep chasing the things that make you happy, and never stop making life interesting.</p>
+<p>Here's to everything we've already laughed about — and everything we haven't experienced yet.</p>
+<p class="sign">Happy birthday, Tanmay. Here's to you. ✦</p>
+<p>— Your friend</p>
+</div>
+</section>
+<section>
+<div class="kicker">04 / Just so you know</div>
+<h2>Reasons you're one of a kind.</h2>
+<p class="intro">A few reminders for the days you need them. Add your own specific reasons to make this section even more personal.</p>
+<div class="reasons">
+<div class="reason">✦ You make the simplest moments memorable.</div>
+<div class="reason">✦ You bring your own kind of energy wherever you go.</div>
+<div class="reason">✦ You're someone worth showing up for.</div>
+<div class="reason">✦ There is never a shortage of stories with you around.</div>
+<div class="reason">✦ You make friendship feel easy and genuine.</div>
+<div class="reason">✦ The world is better with your particular brand of you in it.</div>
+</div>
+</section>
+<section id="surprise">
+<div class="kicker">05 / One last thing</div>
+<h2>A little surprise.</h2>
+<div class="surprise">
+<p>There is a message here that only the birthday boy gets to open.</p>
+<button class="btn" onclick="reveal()">Tap to reveal your hidden message</button>
+<div class="hidden-note" id="secret">Tanmay — no matter how busy life gets or how much changes, I hope we always find our way back to laughing at the same silly things. I'm rooting for you, today and always. Happy birthday! ❤️</div>
+</div>
+</section>
+<section>
+<div class="kicker">06 / Set the soundtrack</div>
+<h2>A song for the occasion.</h2>
+<p class="intro">Choose an audio file from your device to add a song. The file stays on your device; it isn't uploaded with this page.</p>
+<div class="musicbox">
+<label class="btn" for="song">Choose a song</label><input id="song" type="file" accept="audio/*" onchange="loadSong(this)">
+<audio id="player" controls></audio>
+</div>
+</section>
+</main>
+<footer><div class="goldline"></div><span>MADE WITH APPRECIATION, FOR</span><strong>Tanmay</strong><span>May this be a year full of good things. ✦</span></footer>
+<div id="toast"></div>
+<script>
+function addPhoto(input){
+ const file=input.files&&input.files[0]; if(!file)return;
+ const reader=new FileReader();
+ reader.onload=e=>{
+  const frame=input.closest('.photo');
+  let img=frame.querySelector('img'); if(!img){img=document.createElement('img');frame.appendChild(img)}
+  img.src=e.target.result; frame.querySelector('span').textContent='PHOTO ADDED ✓';
+  showToast('Photo added to the gallery');
+ };
+ reader.readAsDataURL(file);
+}
+function reveal(){document.getElementById('secret').classList.toggle('show')}
+function loadSong(input){
+ const file=input.files&&input.files[0];if(!file)return;
+ const player=document.getElementById('player');
+ if(player.dataset.url)URL.revokeObjectURL(player.dataset.url);
+ const url=URL.createObjectURL(file);player.src=url;player.dataset.url=url;showToast('Your song is ready — press play');
+}
+function showToast(message){
+ const t=document.getElementById('toast');t.textContent=message;t.style.display='block';
+ clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2200);
+}
+</script>
+</body>
+</html>
